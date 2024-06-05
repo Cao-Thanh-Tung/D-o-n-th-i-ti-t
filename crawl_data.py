@@ -13,6 +13,7 @@ all_indices = []
 
 for k in range(len(dates)):
     url = 'https://www.estesparkweather.net/archive_reports.php?date=' + dates[k]
+    print("Start crawl link: " + url)
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
     table = soup.find_all('table')
